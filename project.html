@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>poorwa Netflix Clone</title>
+  <style>
+    /* Basic Setup */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #111;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    header {
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      color: #e50914;
+      font-size: 32px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Video Trailer Section */
+    .trailer-box {
+      width: 100%;
+      padding: 20px 5%;
+      text-align: center;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 45%; /* Aspect Ratio control */
+      height: 0;
+      overflow: hidden;
+      max-width: 1000px;
+      margin: 0 auto;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+    }
+
+    /* Movie Sections */
+    .row {
+      padding: 20px 5%;
+    }
+    .row h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .movie-grid {
+      display: grid;
+      /* Automatic Columns - jitni badi screen utne zyada posters */
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 15px;
+    }
+    .movie-card {
+      overflow: hidden;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .movie-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+    }
+    .movie-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px;
+      color: #777;
+      background: #000;
+      margin-top: 30px;
+      border-top: 5px solid #222;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">NETFLIX</a>
+  </header>
+
+  <div class="row">
+    <h2>Popular on Netflix</h2>
+    <div class="movie-grid">
+      <div class="movie-card"><img src="https://m.media-amazon.com/images/M/MV5BNjRiMTA4NWUtNmE0ZC00NGM0LWJhMDUtZWIzMDM5ZDIzNTg3XkEyXkFqcGc@._V1_.jpg" alt="Stranger Things"></div>
+      <div class="movie-card"><img src="https://images.justwatch.com/poster/185481575/s718/goblin.jpg" alt="Goblin"></div>
+      <div class="movie-card"><img src="https://i.mydramalist.com/QyBA2_4f.jpg" alt="Penthouse"></div>
+      <div class="movie-card"><img src="https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="DARK"></div>
+      <div class="movie-card"><img src="https://cdn.premiumkino.de/movie/7783/9237abb836f186ee73972b452ef63982_w900.webp" alt="Intestellar"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Trending Now</h2>
+    <div class="movie-grid">
+      <div class="movie-card"><img src="https://moviesfilmsandflix.com/wp-content/uploads/2018/03/veronica-poster-alternativo-2.jpg" alt="Veronica"></div>
+      <div class="movie-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIdT2kLP7_8vONEUhIophoWXAuIaQZcu2LCw&s" alt="VINCENZO"></div>
+      <div class="movie-card"><img src="https://i.mydramalist.com/QJKkR7_4f.jpg" alt="Sweet Home"></div>
+      <div class="movie-card"><img src="https://upload.wikimedia.org/wikipedia/en/1/15/Twenty-Five_Twenty-One.jpg" alt="Twenty Five Twenty One"></div>
+      <div class="movie-card"><img src="https://niharikadowerah.home.blog/wp-content/uploads/2020/06/never-have-i-ever.jpg?w=426" alt="Never Have I Ever"></div>
+      <div class="movie-card"><img src="https://images.squarespace-cdn.com/content/v1/634d99e9685b7a2bf0d1ae2d/214c6fbd-32dc-464b-b2bd-c2ac8337f513/Damsel-Movie-Poster-2023-Princess-Adventure.jpg" alt="Damsel"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Action & Adventure</h2>
+    <div class="movie-grid">
+      <div class="movie-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Call_poster.jpg/250px-Call_poster.jpg" alt="The Call"></div>
+      <div class="movie-card"><img src="https://m.media-amazon.com/images/M/MV5BOTYxYzA1YmMtYzEzYy00NzY3LThlZmItMWM3NzkwMzcyOGVhXkEyXkFqcGc@._V1_.jpg" alt="The Glory"></div>
+      <div class="movie-card"><img src="https://i.pinimg.com/736x/85/2a/8d/852a8dde8b5113f9ec8adef56060e543.jpg" alt="SQUID GAME"></div>
+    </div>
+  </div>
+  <div class="row">
+    <h2>Top Shows</h2>
+    <div class="movie-grid">
+      <div class="movie-card"><img src="https://nolae.eu/cdn/shop/files/nevertheless-ost-jtbc-drama-nolae-957781.jpg?v=1717605940&width=1076" alt="Nevertheless"></div>
+      <div class="movie-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHkBAuziYSXGScH6n3vnvOLUizYUPuZ5Z3yw&s" alt="your name"></div>
+      <div class="movie-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/My_Oxford_Year_poster.jpg/250px-My_Oxford_Year_poster.jpg" alt="My Oxford Year"></div>
+ </div>
+  </div>
+ 
+  <footer>
+    <p>Questions? Call 000-800-919-1694</p>
+    <p style="margin-top: 15px;">Made by poorwa malik | Semester 1 Project</p>
+  </footer>
+
+</body>
+</html>
